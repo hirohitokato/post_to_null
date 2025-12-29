@@ -1,0 +1,18 @@
+# POST file to server (multipart/form-data)
+
+POST http://localhost:3000/null
+Content-Type: multipart/form-data; boundary=boundary123
+x-timestamp: {{$timestamp}}
+x-signature: Kato Hiroihto
+
+--boundary123
+Content-Disposition: form-data; name="file"; filename="dummy.txt"
+Content-Type: text/plain
+
+< package.json
+--boundary123
+Content-Disposition: form-data; name="ai-ocr-result"; filename="ai-ocr-result"
+Content-Type: text/plain
+
+Hello, this is a dummy OCR result.
+--boundary123--
